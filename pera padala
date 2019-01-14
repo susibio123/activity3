@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+	<title></title>
+
+</head>
+<body>
+
+<h1 style="color: green">BOHOL EXPRESS PERA PADALA</h1>
+
+
+<label style="color: solid black">YOUR MONEY:</label>
+<input type="text" name="" id="num2" value="">
+<input type="button" value="CHECK" onclick="display()">
+<br><br>
+<h1 style="color: red">The Interest Amount value is:</h1><h1 id="rate"></h1>
+<h1 style="color: blue">The amount value:</h1><h1 id="pay"></h1>
+
+
+
+	<script type="text/javascript">
+		
+		
+		function display()
+	{
+		var amount=Number(document.getElementById('num2').value);
+		var category=Number("");
+		if(isNaN(amount)==false)
+		{
+			if (amount>10000)
+			{
+				alert("10000 is the limit")
+			}
+			else if (amount>5000)
+			{
+				category=50
+			}
+			else if (amount>2000)
+			{
+				category=20
+			}
+			else if (amount>1000)
+			{
+				category=10
+			}
+			else if (amount>500)
+			{
+				category=4
+			}
+			else if (amount>200)
+			{
+				category=3
+			}
+			else if (amount>100)
+			{
+				category=2
+			}
+			else
+			{
+				category=0
+			}
+			document.getElementById('rate').innerHTML=category;
+			var num2=Number(amount);
+			var payment=category+num2;
+			document.getElementById('pay').innerHTML=payment;
+			
+
+		}
+		else
+		{
+			alert("Invalid keyword")
+		}
+	}
+	</script>
+
+</body>
+</html>
